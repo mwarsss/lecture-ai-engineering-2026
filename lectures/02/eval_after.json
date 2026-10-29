@@ -1,0 +1,146 @@
+[
+  {
+    "question": "提出の期日を確認したい",
+    "raw": "{\"answer\": \"課題の提出期限は 9 月 30 日 23:59（日本時間）です。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "課題の提出方法は？",
+    "raw": "{\"answer\": \"提出形式は PDF 1 ファイルで、ファイル名は 学籍番号_課題番号.pdf です。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": false,
+    "both_ok": false
+  },
+  {
+    "question": "提出物の書式は？",
+    "raw": "{\"answer\": \"提出形式は PDF 1 ファイルで、ファイル名は 学籍番号_課題番号.pdf です。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "いつ質問できますか",
+    "raw": "{\"answer\": \"質問は毎週火曜 17:00〜18:00 のオフィスアワーで受け付けます。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "遅れても出せる？",
+    "raw": "{\"answer\": \"期限後の提出は、期限から 48 時間以内なら減点のうえ受け付けます。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "追試はありますか",
+    "raw": "{\"answer\": \"期限後の提出は、期限から 48 時間以内なら減点のうえ受け付けます。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": false,
+    "both_ok": false
+  },
+  {
+    "question": "授業の録画はありますか",
+    "raw": "{\"answer\": \"この FAQ には記載がありません。運営に確認が必要です。\", \"needs_review\": true}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "再提出できますか",
+    "raw": "{\"answer\": \"期限後の提出は、期限から 48 時間以内なら減点のうえ受け付けます。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": false,
+    "both_ok": false
+  },
+  {
+    "question": "提出期限を教えてください",
+    "raw": "{\"answer\": \"課題の提出期限は 9 月 30 日 23:59（日本時間）です。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "課題はいつまでに出す？",
+    "raw": "{\"answer\": \"課題の提出期限は 9 月 30 日 23:59（日本時間）です。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "提出先はどこですか",
+    "raw": "{\"answer\": \"提出先は学習ポータルの「課題」欄です。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "課題はどこに出しますか",
+    "raw": "{\"answer\": \"提出先は学習ポータルの「課題」欄です。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "提出形式は何ですか",
+    "raw": "{\"answer\": \"提出形式は PDF 1 ファイルで、ファイル名は 学籍番号_課題番号.pdf です。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "課題の形式は？",
+    "raw": "{\"answer\": \"提出形式は PDF 1 ファイルで、ファイル名は 学籍番号_課題番号.pdf です。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "質問できる時間は？",
+    "raw": "{\"answer\": \"質問は毎週火曜 17:00〜18:00 のオフィスアワーで受け付けます。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "オフィスアワーはいつですか",
+    "raw": "{\"answer\": \"質問は毎週火曜 17:00〜18:00 のオフィスアワーで受け付けます。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "遅れた場合どうなりますか",
+    "raw": "{\"answer\": \"期限後の提出は、期限から 48 時間以内なら減点のうえ受け付けます。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  },
+  {
+    "question": "遅刻提出は？",
+    "raw": "{\"answer\": \"期限後の提出は、期限から 48 時間以内なら減点のうえ受け付けます。\", \"needs_review\": false}",
+    "format_ok": true,
+    "format_reason": "ok",
+    "content_ok": true,
+    "both_ok": true
+  }
+]

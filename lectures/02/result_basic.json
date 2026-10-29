@@ -1,0 +1,37 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 20,
+    "lr": 0.0005,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 2,
+    "warmup_steps": 6,
+    "max_seq_len": 512,
+    "gen": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    }
+  },
+  "before": {
+    "label": "before",
+    "n": 18,
+    "format_rate": 0.1667,
+    "content_rate": 0.0,
+    "both_rate": 0.0,
+    "seconds": 53.4
+  },
+  "after": {
+    "label": "after_lr5e4",
+    "n": 18,
+    "format_rate": 1.0,
+    "content_rate": 0.8889,
+    "both_rate": 0.8889,
+    "seconds": 247.3
+  },
+  "training_time_s": 1142.8,
+  "final_loss": 0.0116
+}
