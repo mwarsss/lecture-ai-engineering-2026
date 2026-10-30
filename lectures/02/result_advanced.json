@@ -1,0 +1,281 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 5,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 2,
+    "warmup_steps": 6,
+    "max_seq_len": 512,
+    "gen": {
+      "do_sample": false,
+      "max_new_tokens": 96
+    }
+  },
+  "glossary_before": {
+    "label": "glossary_before",
+    "n": 15,
+    "format_rate": 0.2,
+    "content_rate": 0.2,
+    "both_rate": 0.2,
+    "seconds": 163.7
+  },
+  "glossary_after": {
+    "label": "glossary_after",
+    "n": 15,
+    "format_rate": 0.4667,
+    "content_rate": 0.0667,
+    "both_rate": 0.0667,
+    "seconds": 134.9
+  },
+  "training_time_s": 748.4,
+  "final_loss": 0.0008,
+  "eval_before": [
+    {
+      "question": "「AIエンジニアリング」とは何ですか？",
+      "raw": "{\"answer\": \"学習済みの基盤モデル（主にLLM）を部品として使い、実際に役立つアプリケーションやシステムを設計・構築・評価・運用する技術領域。モデルを一から作ることより、モデ...\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "「評価と改善のサイクル」とは何ですか？",
+      "raw": "{\"answer\": \"評価と改善のサイクルは、作る→測る→直すを繰り返す開発の進め方。AI アプリは出力が確率的に揺れるため、感覚ではなく評価データや指標で良し悪しを判断し、その結果をもとにプロンプト・データ...\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "「LLM（大規模言語モデル）」とは何ですか？",
+      "raw": "{\"answer\": \"LLM（大規模言語モデル）は、大量のテキストで学習し、入力に続くトークンを予測することで文章を生成するモデル。質問応答、要約、コード生成など多くのタスクを、指示（プロンプト）を変えるだけでこなすことができる。\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "「トークン」とは何ですか？",
+      "raw": "{\"answer\": \"LLMがテキストを扱う最小単位。単語や文字の断片に分割される。APIの料金、レート制限、コンテキストウィンドウの大きさは、多くの場合トークン数で数える。日本語は...\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "「コンテキストウィンドウ」とは何ですか？",
+      "raw": "{\"answer\": \"コンテキストウィンドウは、LLMが1回の呼び出しで扱える入力と出力の合計トークン数の上限です。会話履歴やツールの結果もこの中に収める必要があるため、何をモデルに渡すかの設計が重要になる。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "ok",
+      "content_ok": true,
+      "both_ok": true
+    },
+    {
+      "question": "プロンプト を初心者にも分かるように説明してください。",
+      "raw": "{\"answer\": \"プロンプトは、LLM（大規模言語モデル）に渡す入力文です。質問だけでなく、役割、制約、出力形式、例などを含めることで、モデルが何を答えるべきか、どのように答えるべきかを指示します。初心者でも「質問」としての役割を明確にすることで、より自然な回答を得られます。\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "システムプロンプト の意味を教えてください。",
+      "raw": "{\"answer\": \"システムプロンプトは、利用者の質問とは別に、モデルの振る舞い（役割、口調、守るべきルールなど）を指定する入力文です。Pydantic AIでは Agent の instructions を指す。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "ok",
+      "content_ok": true,
+      "both_ok": true
+    },
+    {
+      "question": "temperature って何のことですか？",
+      "raw": "{\"answer\": \"temperature: 次のトークンを選ぶときのランダムさを調整する設定値。低いほど出力が安定し、高いほど多様になる。同じ質問でも回答が変わる理由の一つ。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "ok",
+      "content_ok": true,
+      "both_ok": true
+    },
+    {
+      "question": "ハルシネーション について教えてください。",
+      "raw": "{\"answer\": \"ハルシネーションは、LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象です。モデルが知らないこと（最新情報、組織や講座に固有の情報など）を聞いたときに起きやすくなります。\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "API とはどういうものですか？",
+      "raw": "{\"answer\": \"API は、プログラムから別のサービスの機能を呼び出すための窓口です。本講座では Gemini API を Python から呼び出して LLM を利用する際、API を指します。\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "Kubernetes のオートスケーリングとは何ですか？",
+      "raw": "{\"answer\": \"この用語集には記載がありません。\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "React の仮想 DOM の仕組みを教えてください。",
+      "raw": "{\"answer\": \"React の仮想 DOM は、React のコンポーネントを、React のライブラリ（通常はReactDOM）で管理する仕組みです。コンポーネントは、React のコンポーネントライブラリ（通常はReact）で管理され、React のコンポーネントライブラリは、React のライブラリ（通常はReactDOM）で管理されます。\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "量子コンピュータのキュービットとは何ですか？",
+      "raw": "{\"answer\": \"この用語集には記載がありません。\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "SQL のインデックスの仕組みは？",
+      "raw": "{\"answer\": \"この用語集には記載がありません。\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "Docker と Podman の違いは何ですか？",
+      "raw": "{\"answer\": \"Docker と Podman はどちらも容器化技術ですが、主な違いは以下の通りです。\\n\\n1. **機能の範囲**: Docker は「容器化」技術であり、Podman は「容器管理」ツールです。Docker は Dockerfile を作成して、その容器を起動・停止・リロードできるため、Dockerfile を作成するだけで動作します。Podman は Docker の機能（起動、停止、リロード）",
+      "format_ok": false,
+      "format_reason": "json_error",
+      "content_ok": false,
+      "both_ok": false
+    }
+  ],
+  "eval_after": [
+    {
+      "question": "「AIエンジニアリング」とは何ですか？",
+      "raw": "{\"answer\": \"学習済みのLLMモデルを部品として使い、実際に役立つアプリケーションやシステムを設計・構築・評価・運用する技術領域。モデルを一から作ることより、モデ...\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "「評価と改善のサイクル」とは何ですか？",
+      "raw": "{\"answer\": \"この用語集には記載がありません。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "ok",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "「LLM（大規模言語モデル）」とは何ですか？",
+      "raw": "{\"answer\": \"LLM（大規模言語モデル）は、大量のテキストで学習し、入力に続くトークンを予測することで文章を生成するモデル。この講座では、質問応答や要約など多くのタスクを、指示（プロンプト）を変えるだけでこ...\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "ok",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "「トークン」とは何ですか？",
+      "raw": "{\"answer\": \"トークンは LLM（大規模言語モデル）がテキストを扱う最小単位です。単語や文字の断片に分割される。多くの場合、モデルの出力トークン数や料金数で数える。日本語は...\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "「コンテキストウィンドウ」とは何ですか？",
+      "raw": "{\"answer\": \"LLM（大規模言語モデル）は、入力と出力を2つの部品として設計する。コンテキストウィンドウは、この2つの部品を同時に扱える入力と出力の合計トークン数の上限を指定する設定値です。会話履歴やツールの結果もこの中に収める必要があるため、何をモデルに渡すかの設計が重要になります。低いtemperatureは出力を安定させ、高いtemperatureは出力を多様",
+      "format_ok": false,
+      "format_reason": "json_error",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "プロンプト を初心者にも分かるように説明してください。",
+      "raw": "{\"answer\": \"LLM（大規模言語モデル）は、質問だけでなく入力文（プロンプト）を変えるだけで回答が変わるため、質問とは別にプロンプトを設計する必要がある。プロンプトはモデルの振る舞い（役割、口調、守るべきルールなど）を指定する入力です。Pydantic AIでは Agent の instructions 引...\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "システムプロンプト の意味を教えてください。",
+      "raw": "{\"answer\": \"システムプロンプトは、質問だけでなくモデルの振る舞い（役割、口調、守るべきルールなど）を指定する入力文です。Pydantic AIでは Agent の instructions 引...\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "ok",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "temperature って何のことですか？",
+      "raw": "{\"answer\": \"temperature は、次のトークンを選ぶときのランダムさを調整する設定値です。低いほど出力が安定し、高いほど出力が多様になります。同じ質問でも回答が変わる理由の一つです。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "ok",
+      "content_ok": true,
+      "both_ok": true
+    },
+    {
+      "question": "ハルシネーション について教えてください。",
+      "raw": "{\"answer\": \"LLMが大量のテキストで学習し、入力に続くトークンを予測することで文章を生成する技術領域。学習済みのモデル（主にLLM）を部品として使い、感覚ではなく評価データや指標でアプリを良し悪しに判断し、その結果をもとにプロンプト・データ...\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "ok",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "API とはどういうものですか？",
+      "raw": "{\"answer\": \"Pydantic AIでは、別のサービスの結果を再利用する技術領域。コンテキストウィンドウをモデルに渡す入力と出力を、APIの料金やレート制限を数えるだけでなく、結果を指標で良し悪しに判断し、その結果をもとにプロンプト・データ...\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "ok",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "Kubernetes のオートスケーリングとは何ですか？",
+      "raw": "{\"answer\": \"Kubernetesのオートスケーリングは、利用者の質問やイベントから予測し、実際に役立つコンテキストウィンドウを縮めるために必要な計算資源（CPU、メモリなど）を自動的に増減させる技術領域。モデルを一から作ることより、スケールを設計・評価・運用する技術で、Pydantic AIでは Agent の instructions 引...\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "React の仮想 DOM の仕組みを教えてください。",
+      "raw": "{\"answer\": \"仮想 DOM (Virtual DOM) は、実際に存在する HTML の要素をリストで管理し、その結果を計算し、次に必要な要素を DOM に更新する手順を、計算と更新を二つの段階に分割する設計。Pydantic AIでは Agent の instructions 引...\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "ok",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "量子コンピュータのキュービットとは何ですか？",
+      "raw": "{\"answer\": \"キュービットは、2つの状態（主に0と1）を同時に持つ最小単位の量子状態です。量子コンピュータでは多くの場合、ナノスケールの部品として設計されるキュービットを、多くの場合複数のを並列に配置することで計算をこもる設計になります。質問応答、要約、システ...\"}",
+      "format_ok": false,
+      "format_reason": "keys={'answer'}",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "SQL のインデックスの仕組みは？",
+      "raw": "{\"answer\": \"SQLのインデックスは、利用者の質問に迅速に答えられるように設計されたテキストベースのモデル（主にLLM）の出力を、計算をこえてこる技術領域。質問が文章で、結果が数値やリストで、計算が複雑になるほどインデックスの設計が重要になる。...\nneeds_review: true",
+      "format_ok": false,
+      "format_reason": "json_error",
+      "content_ok": false,
+      "both_ok": false
+    },
+    {
+      "question": "Docker と Podman の違いは何ですか？",
+      "raw": "{\"answer\": \"Docker は Linux 系システムで利用可能なコンテキストウィンドウを、複数のアプリケーションやサービスを管理する技術領域。Podman は Docker の依存する容器を、また、Docker 以外の容器管理ツール（主に Bash での `podman` 命令）で管理する技術領域。Docker は多くの場合、Podman ではなく、Pydantic AI 講座では Agent などのツールの結果を評価する",
+      "format_ok": false,
+      "format_reason": "json_error",
+      "content_ok": false,
+      "both_ok": false
+    }
+  ]
+}
