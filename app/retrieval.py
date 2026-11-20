@@ -17,7 +17,7 @@ import sqlite_vec
 from app.config import (
     EMBEDDING_DIMENSIONS, EMBEDDING_MAX_TOKENS, EMBEDDING_MODEL,
     RAG_DB, RAG_DOCUMENT_IDS, RAG_SOURCE, RAG_TOP_K, RAG_TREE, get_api_key,
-    RAG_GRAPH, GRAPH_START_K, GRAPH_HOPS, GRAPH_MAX_RESULTS,
+    RAG_GRAPH, GRAPH_START_K, GRAPH_HOPS, GRAPH_MAX_RESULTS, RAG_NEIGHBORS,
 )
 
 
@@ -138,6 +138,29 @@ def search(query: str) -> list[dict]:
         return [dict(row) for row in rows]
 
 
+def search_with_neighbors(query: str, window: int = RAG_NEIGHBORS) -> list[dict]:
+    """通常の検索結果に、同じ資料内の前後windowページの本文を足して返す。
+
+    search()自体は変えない（search_graphの入口にも使われるため）。
+    追加したページには neighbor_of（どの検索結果の隣か）を付け、distanceはNoneにする。
+    """
+    hits = search(query)
+    if window <= 0:
+        return hits
+    by_position = {(page["document_id"], page["page"]): page for page in load_pages(RAG_SOURCE)}
+    seen = {hit["page_id"] for hit in hits}
+    neighbors = []
+    for hit in hits:
+        for offset in [o for o in range(-window, window + 1) if o != 0]:
+            page = by_position.get((hit["document_id"], hit["page"] + offset))
+            # 別の資料にはまたがらない（キーにdocument_idを含む）。同じページは1回だけ返す。
+            if page is None or page["page_id"] in seen:
+                continue
+            seen.add(page["page_id"])
+            neighbors.append({**page, "distance": None, "neighbor_of": hit["page_id"]})
+    return hits + neighbors
+
+
 def search_graph(query: str) -> dict:
     """ベクトル検索を入口に、前後ページと共通用語で候補を広げる。"""
     pages = {page["page_id"]: page for page in load_pages(RAG_SOURCE)}
@@ -202,8 +225,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="エージェントを使わず、講義資料の検索だけを実行する")
     parser.add_argument("query", help="調べたい内容")
     args = parser.parse_args()
-    for i, result in enumerate(search(args.query), 1):
-        print(f"\n{'=' * 60}\n検索結果 {i}\n{'=' * 60}")
+    for i, result in enumerate(search_with_neighbors(args.query), 1):
+        origin = f"（前後ページ: {result['neighbor_of']} の隣）" if result.get("neighbor_of") else ""
+        print(f"\n{'=' * 60}\n検索結果 {i}{origin}\n{'=' * 60}")
         print(f"講義: {result['document_title']}")
         print(f"章: {result['section']}")
         print(f"タイトル: {result['title']}")
