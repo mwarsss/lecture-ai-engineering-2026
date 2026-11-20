@@ -18,7 +18,10 @@ RAG_TREE = ROOT / "data/rag_data/tree.json"
 RAG_GRAPH = ROOT / "data/rag_data/graph.json"
 RAG_DB = Path(os.getenv("AIE_RAG_DB", str(ROOT / "data/rag_data/index.sqlite3")))
 RAG_DOCUMENT_IDS = ("lec01-main", "lec02-main", "lec03-main")
-RAG_TOP_K = 5
+RAG_TOP_K = int(os.getenv("AIE_RAG_TOP_K", "5"))
+# 宿題（実装）: 検索結果の前後何ページ分の本文も返すか。0なら通常の検索と同じ。
+#   例: AIE_RAG_NEIGHBORS=1 uv run python -m app.agent --trace "質問"
+RAG_NEIGHBORS = int(os.getenv("AIE_RAG_NEIGHBORS", "0"))
 GRAPH_START_K = 3
 GRAPH_HOPS = 2
 GRAPH_MAX_RESULTS = 10
